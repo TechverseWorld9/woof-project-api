@@ -24,13 +24,20 @@ import org.springframework.stereotype.Repository;
 public class UserRepository {
 
     @Autowired
-    private DynamoDBMapper dynamoDBMapper;
+    private static DynamoDBMapper dynamoDBMapper;
 
 
     public User save(User user) {
         dynamoDBMapper.save(user);
         return user;
     }
+
+
+	public static DatabaseFile save(DatabaseFile dbFile) {
+		// TODO Auto-generated method stub
+		dynamoDBMapper.save(dbFile);
+		return dbFile;
+	}
 
    
 
